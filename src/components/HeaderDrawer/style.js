@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   boxUser: {
+    marginLeft: 10,
     width: 60,
     height: 60,
     borderRadius: 30,
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textTransform: "uppercase",
   },
-  boxIcon: { marginLeft: 25 },
+  boxIcon: { marginLeft: 35 },
 });
 
 export default styles;

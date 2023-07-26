@@ -5,6 +5,7 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  TouchableWithoutFeedback,
 } from "react-native";
 import { Checkbox } from "expo-checkbox";
 import { useState } from "react";
@@ -21,7 +22,10 @@ export default function Login() {
   };
 
   return (
-    <KeyboardAvoidingView style={styles.container}>
+    <KeyboardAvoidingView
+      enable={Platform.OS === "ios" ? "padding" : "height"}
+      style={styles.container}
+    >
       <Image
         style={{ width: 150, height: 60 }}
         source={require("../../../assets/LOGO-SUPER.png")}
@@ -33,6 +37,8 @@ export default function Login() {
           onChangeText={() => {}}
           keyboardType="numeric"
           inputMode="numeric"
+          maxLength={14}
+          // contextMenuHidden
         />
         <View style={styles.checkbox}>
           <Checkbox
