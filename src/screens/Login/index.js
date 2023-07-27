@@ -14,11 +14,20 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function Login() {
   const [isChecked, setCheched] = useState(false);
+  const [cpfCnpj, setCpfCnpj] = useState(""); // Adicione um estado para o valor do CPF/CNPJ
 
   const navigation = useNavigation();
 
   const handleEntrarPress = () => {
-    navigation.navigate("Home");
+    // Remova qualquer caracter não numérico do CPF/CNPJ digitado
+
+    // Verifique se o valor digitado é um CPF ou CNPJ válido
+    if (cpfCnpj.length === 11 || cpfCnpj.length === 14) {
+      console.log("CPF válido:", setCpfCnpj);
+      navigation.navigate("Home");
+    } else {
+      alert("CPF/CNPJ inválido");
+    }
   };
 
   return (
@@ -34,7 +43,7 @@ export default function Login() {
         <TextInput
           style={styles.input}
           placeholder="CPF/CNPJ"
-          onChangeText={() => {}}
+          onChangeText={setCpfCnpj} // Atualiza o valor do CPF/CNPJ no estado
           keyboardType="numeric"
           inputMode="numeric"
           maxLength={14}
