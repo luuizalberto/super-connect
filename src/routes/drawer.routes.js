@@ -34,7 +34,10 @@ export default function DrawerRoutes() {
         drawerPosition: "right",
         headerShown: false,
         drawerLabelStyle: { marginLeft: -20 },
-        drawerItemStyle: { marginBottom: -5 },
+        drawerItemStyle: {
+          marginBottom: -5,
+          width: 250,
+        },
         drawerInactiveTintColor: "#bfbfbf",
         drawerActiveBackgroundColor: "#fff",
         headerStyle: {
