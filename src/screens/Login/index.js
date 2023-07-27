@@ -11,10 +11,13 @@ import { Checkbox } from "expo-checkbox";
 import { useState } from "react";
 import styles from "./styles";
 import { useNavigation } from "@react-navigation/native";
+import ErrorPopup from "../../components/ErrorPopup";
 
 export default function Login() {
   const [isChecked, setCheched] = useState(false);
   const [cpfCnpj, setCpfCnpj] = useState(""); // Adicione um estado para o valor do CPF/CNPJ
+  const [errorModalVisible, setErrorModalVisible] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const navigation = useNavigation();
 
@@ -23,11 +26,17 @@ export default function Login() {
 
     // Verifique se o valor digitado é um CPF ou CNPJ válido
     if (cpfCnpj.length === 11 || cpfCnpj.length === 14) {
-      console.log("CPF válido:", setCpfCnpj);
+      console.log("CPF válido:", cpfCnpj);
       navigation.navigate("Home");
     } else {
-      alert("CPF/CNPJ inválido");
+      // alert("CPF/CNPJ inválido");
+      setErrorMessage("CPF/CNPJ inválido");
+      setErrorModalVisible(true);
     }
+  };
+
+  const closeModal = () => {
+    setErrorModalVisible(false);
   };
 
   return (
@@ -70,6 +79,12 @@ export default function Login() {
           </TouchableOpacity>
         </View>
       </View>
+      {/* Renderiza o componente ErrorPopup quando o modal estiver visível */}
+      <ErrorPopup
+        isVisible={errorModalVisible}
+        message={errorMessage}
+        onClose={closeModal}
+      />
     </KeyboardAvoidingView>
   );
 }
