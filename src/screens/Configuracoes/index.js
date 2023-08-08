@@ -1,5 +1,5 @@
-import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
-import { Feather } from "@expo/vector-icons";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { Feather, MaterialIcons } from "@expo/vector-icons";
 
 export default function Home({ navigation }) {
   const openMenu = () => {
@@ -25,6 +25,57 @@ export default function Home({ navigation }) {
           <Feather name="menu" size={30} color={"black"} />
         </TouchableOpacity>
       </View>
+      {/* 
+      
+      */}
+
+      <View style={styles.boxContainer}>
+        <View style={styles.boxInterna}>
+          <MaterialIcons name="payment" size={60} color={"#8f8f8f"} />
+          <Text
+            style={{
+              fontSize: 18,
+              color: "#8f8f8f",
+              marginTop: 8,
+              width: 300,
+              marginLeft: 10,
+            }}
+          >
+            Configurações de pagamento recorrente
+          </Text>
+          <Text
+            style={{
+              fontSize: 14,
+              color: "#8f8f8f",
+              marginTop: 8,
+              width: 260,
+              lineHeight: 20,
+              marginLeft: 10,
+              paddingBottom: 20,
+              borderBottomWidth: 0.2,
+              borderColor: "#8f8f8f",
+            }}
+          >
+            Marque os contratos que deseja cancelar a cobrança recorrente :
+          </Text>
+          <Text
+            style={{
+              fontSize: 14,
+              color: "#8f8f8f",
+              textAlign: "center",
+              marginTop: 20,
+              width: 260,
+              lineHeight: 20,
+              marginLeft: 10,
+              paddingBottom: 20,
+              borderBottomWidth: 0.2,
+              borderColor: "#8f8f8f",
+            }}
+          >
+            Nenhum contrato com cobrança recorrente foi encontrado!
+          </Text>
+        </View>
+      </View>
     </View>
   );
 }
@@ -32,5 +83,16 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+
+  boxContainer: { alignItems: "center" },
+  boxInterna: {
+    maxWidth: "95%",
+    flexDirection: "column",
+    padding: 25,
+    backgroundColor: "#fff",
+    marginTop: 10,
+    borderRadius: 5,
+    elevation: 90,
   },
 });
