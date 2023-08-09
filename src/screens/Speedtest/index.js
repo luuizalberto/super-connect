@@ -144,6 +144,7 @@ const styles = StyleSheet.create({
     color: "#52004F",
     marginTop: 50,
   },
+  // ==============
   boxtutorial: { marginTop: 40 },
   textTutorial: { flexDirection: "row", width: "95%", marginBottom: 20 },
   button: {

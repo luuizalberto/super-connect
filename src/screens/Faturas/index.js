@@ -1,9 +1,18 @@
-import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
-import { Feather } from "@expo/vector-icons";
+import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
+import { useState } from "react";
+import { Feather, MaterialIcons } from "@expo/vector-icons";
+import CarregarFaturas from "../../components/CarregarFaturas";
+import ConteudoFaturas2 from "../../components/CarregarFaturas";
 
 export default function Faturas({ navigation }) {
   const openMenu = () => {
     navigation.openDrawer();
+  };
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleToggleVisibility = () => {
+    setIsVisible(!isVisible);
   };
 
   return (
@@ -25,6 +34,46 @@ export default function Faturas({ navigation }) {
           <Feather name="menu" size={30} color={"black"} />
         </TouchableOpacity>
       </View>
+      <View style={styles.bodyMain}>
+        <View style={[styles.boxMaior, { backgroundColor: "#00A33F" }]}>
+          <View style={styles.conteudoLeft}>
+            {/* <MaterialIcons
+                  name="monetization-on"
+                  size={40}
+                  color={"white"}
+                  style={{ marginRight: 5 }}
+                  /> */}
+            <Text style={styles.textMaior}>
+              CONTRATO: 30_BM_R$_49,90__MIGRACAO
+            </Text>
+            <Text style={[styles.textMaior, { marginTop: 10 }]}>ID: 56776</Text>
+          </View>
+          <View style={styles.conteudoRight}>
+            <Text
+              style={[styles.textMaior, { fontSize: 24, fontWeight: "400" }]}
+            >
+              R$ 40,90
+            </Text>
+            <Text style={{ color: "#fff", fontSize: 12, fontWeight: 300 }}>
+              em aberto no mês atual
+            </Text>
+          </View>
+        </View>
+        {/* 
+        ----------------------- CARREGAR
+        */}
+        {isVisible && <CarregarFaturas />}
+
+        <TouchableOpacity
+          style={styles.buttonCarregar}
+          onPress={handleToggleVisibility}
+        >
+          <MaterialIcons name="expand-more" size={24} color={"#05b5f5"} />
+          <Text style={{ color: "#05b5f5", fontSize: 18, fontWeight: 300 }}>
+            CARREGAR FATURAS
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -33,4 +82,38 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  bodyMain: {
+    backgroundColor: "#fff",
+    marginTop: 25,
+    marginBottom: 10,
+    width: "98%",
+    padding: 15,
+    left: "1%",
+    minHeight: 50,
+    elevation: 20,
+    flexDirection: "column",
+  },
+  boxMaior: {
+    minHeight: 150,
+    padding: 15,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "#139e3a",
+
+    borderRadius: 4,
+    top: -30,
+    marginBottom: -25,
+    elevation: 10,
+  },
+
+  // Conteúdo dentro da BOX do TITULO
+  textMaior: {
+    color: "#fff",
+    fontWeight: 300,
+    fontSize: 18,
+    // width: 100,
+  },
+  conteudoRight: { alignItems: "flex-end", width: 60 },
+  // ============
+  buttonCarregar: { alignItems: "center", marginTop: 5 },
 });
