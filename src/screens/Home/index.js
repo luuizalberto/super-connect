@@ -106,7 +106,7 @@ export default function Home({ navigation }) {
 
             <TouchableOpacity
               style={styles.todas}
-              // onPress={() => navigation.navigate("Faturas")}
+              onPress={() => navigation.navigate("Faturas")}
             >
               <Feather
                 name="arrow-right"
@@ -152,7 +152,7 @@ export default function Home({ navigation }) {
 
             <TouchableOpacity
               style={styles.todas}
-              // onPress={() => navigation.navigate("Faturas")}
+              onPress={() => navigation.navigate("Contratos")}
             >
               <Feather
                 name="arrow-right"
