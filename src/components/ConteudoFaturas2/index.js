@@ -34,37 +34,6 @@ const ConteudoFaturas2 = ({ status, vencimento, valor }) => {
         </View>
         {isVisible && <OpenBoxFaturas2 />}
       </TouchableOpacity>
-
-      {/* <View style={styles.titlesTable}>
-        <Text style={[styles.textTitle]}>Status</Text>
-        <Text style={[styles.textTitle]}>Vencimento</Text>
-        <Text style={[styles.textTitle]}>Valor</Text>
-
-        <Text style={[styles.textTitle, { marginLeft: 45 }]}>Ações</Text>
-      </View>
-      <View style={styles.bodyTable}>
-        <Text
-          style={[styles.boxHandleStatus, { fontSize: 12, marginRight: 20 }]}
-        >
-          {status}
-        </Text>
-
-        <Text allowFontScaling={true} style={styles.textBody}>
-          {vencimento}
-        </Text>
-        <Text style={[styles.textBody, { marginRight: 10 }]}>{valor}</Text>
-        <View>
-          <TouchableOpacity onPress={handleToggleVisibility}>
-            <View style={styles.selectAcao}>
-              <Text style={{ color: "white", fontSize: 11 }}>
-                Selecione uma ação
-              </Text>
-              <MaterialIcons name="arrow-drop-down" color={"white"} size={14} />
-            </View>
-          </TouchableOpacity>
-          {isVisible && <OpenBoxFaturas />}
-        </View>
-      </View> */}
     </View>
   );
 };

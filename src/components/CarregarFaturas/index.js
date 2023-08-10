@@ -38,6 +38,7 @@ const CarregarFaturas = ({ status, vencimento, periodo1, periodo2, valor }) => {
           <Text style={[styles.textTitle]}>Vencimento:</Text>
           <Text style={{ fontSize: 14 }}>28/08/2023{vencimento}</Text>
         </View>
+
         {isVisible && <OpenBoxFaturas2 />}
       </View>
 
@@ -92,12 +93,12 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     marginTop: 15,
-    marginBottom: 15,
+    marginBottom: 25,
   },
   boxPeriodo: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 15,
+    marginBottom: 25,
   },
   boxVencimento: {
     flexDirection: "row",

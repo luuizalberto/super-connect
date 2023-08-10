@@ -3,7 +3,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 const OpenBoxFaturas2 = () => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { marginTop: 10 }]}>
       <View style={styles.textValor}>
         <Text style={[styles.textTitle]}>Valor:</Text>
         <Text style={{ fontSize: 14 }}>R$ 49,90</Text>
