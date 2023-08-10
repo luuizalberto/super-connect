@@ -30,9 +30,9 @@ const BoxTermos = ({ status, descricao }) => {
             </Text>
           </View>
         </TouchableOpacity>
-        <View style={styles.boxVencimento}>
+        <View style={styles.boxDescricao}>
           <Text style={[styles.textTitle]}>Descrição:</Text>
-          <Text style={{ fontSize: 14, fontWeight: 300 }}>{descricao}</Text>
+          <Text style={styles.textDesc}>{descricao}</Text>
         </View>
         {isVisible && <ButtonsTermos />}
       </View>
@@ -59,9 +59,15 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 15,
   },
-  boxVencimento: {
+  boxDescricao: {
     flexDirection: "row",
     justifyContent: "space-between",
+  },
+  textDesc: {
+    fontSize: 14,
+    fontWeight: 300,
+    maxWidth: "70%",
+    textAlign: "right",
   },
   // --------------------------------------------------------
 
