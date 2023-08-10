@@ -4,7 +4,7 @@ import {
 } from "@react-navigation/drawer";
 import { MaterialIcons } from "@expo/vector-icons";
 import Login from "../screens/Login";
-import Home from "../screens/Home";
+import Home2 from "../screens/Home2";
 import Faturas from "../screens/Faturas";
 import Relatorios from "../screens/Relatorios";
 import Configuracoes from "../screens/Configuracoes";
@@ -47,7 +47,7 @@ export default function DrawerRoutes() {
     >
       <Drawer.Screen
         name="Home"
-        component={Home}
+        component={Home2}
         options={{
           drawerIcon: ({ color }) => (
             <MaterialIcons name="home" color={color} size={40} />
