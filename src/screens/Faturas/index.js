@@ -1,8 +1,7 @@
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import { useState } from "react";
 import { Feather, MaterialIcons } from "@expo/vector-icons";
-import CarregarFaturas from "../../components/CarregarFaturas";
-import ConteudoFaturas2 from "../../components/CarregarFaturas";
+import BoxFaturas from "../../components/BoxFaturas";
 
 export default function Faturas({ navigation }) {
   const openMenu = () => {
@@ -62,7 +61,14 @@ export default function Faturas({ navigation }) {
         {/* 
         ----------------------- CARREGAR
         */}
-        {isVisible && <CarregarFaturas />}
+        {isVisible && (
+          <BoxFaturas
+            status={"em aberto"}
+            periodo1={"28/07/2023"}
+            periodo2={"27/08/2023"}
+            vencimento={"28/08/2023"}
+          />
+        )}
 
         <TouchableOpacity
           style={styles.buttonCarregar}

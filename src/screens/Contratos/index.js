@@ -3,8 +3,8 @@ import { useState } from "react";
 import { Feather } from "@expo/vector-icons";
 import CarregarFaturas from "../../components/CarregarFaturas";
 import OpenBoxContratos2 from "../../components/OpenBoxContratos2";
-import CarregarContratos from "../../components/CarregarContratos";
-import ConteudoTermos2 from "../../components/ConteudoTermos2";
+import BoxContratos from "../../components/BoxContratos";
+import BoxTermos from "../../components/BoxTermos";
 
 export default function Faturas({ navigation }) {
   const openMenu = () => {
@@ -64,7 +64,7 @@ export default function Faturas({ navigation }) {
           </View>
         </View>
 
-        <CarregarContratos />
+        <BoxContratos />
       </View>
       {/* 
       
@@ -102,10 +102,7 @@ export default function Faturas({ navigation }) {
         ----------------------- CARREGAR
         */}
 
-        <ConteudoTermos2
-          status={"assinado"}
-          descricao={"30_MB_R$_49,90__MIGRACAO"}
-        />
+        <BoxTermos status={"assinado"} descricao={"30_MB_R$_49,90__MIGRACAO"} />
       </View>
     </View>
   );

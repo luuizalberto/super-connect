@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-const OpenBoxFaturas2 = () => {
+const ButtonsFaturas = ({ valor }) => {
   return (
     <View style={[styles.container, { marginTop: 10 }]}>
       <View style={styles.textValor}>
         <Text style={[styles.textTitle]}>Valor:</Text>
-        <Text style={{ fontSize: 14 }}>R$ 49,90</Text>
+        <Text style={{ fontSize: 14, fontWeight: 300 }}>R$ {valor}</Text>
       </View>
       {/* 
       
@@ -88,4 +88,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default OpenBoxFaturas2;
+export default ButtonsFaturas;

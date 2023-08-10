@@ -1,11 +1,11 @@
 import { MaterialIcons } from "@expo/vector-icons";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { useState } from "react";
-import ButtonsTermos from "../ButtonsTermos";
+import ButtonsContratos from "../ButtonsContratos";
 
 // import { Container } from './styles';
 
-const ConteudoTermos2 = ({ status, descricao }) => {
+const BoxContratos = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleToggleVisibility = () => {
@@ -13,11 +13,11 @@ const ConteudoTermos2 = ({ status, descricao }) => {
   };
   return (
     <View>
-      <TouchableOpacity
-        style={styles.boxInicialAberta}
-        onPress={handleToggleVisibility}
-      >
-        <View style={styles.boxStatus}>
+      <View style={styles.boxInicialAberta}>
+        <TouchableOpacity
+          style={styles.boxStatus}
+          onPress={handleToggleVisibility}
+        >
           <View style={styles.statusAndArrow}>
             <MaterialIcons name="expand-more" size={30} color={"#13a303"} />
             <Text style={[styles.textTitle]}>Status</Text>
@@ -25,15 +25,18 @@ const ConteudoTermos2 = ({ status, descricao }) => {
           <Text
             style={[styles.boxHandleStatus, { fontSize: 14, fontWeight: 300 }]}
           >
-            {status}
+            ativo
+          </Text>
+        </TouchableOpacity>
+        <View style={styles.boxDescricao}>
+          <Text style={[styles.textTitle]}>Descrição:</Text>
+          <Text style={{ fontSize: 14, fontWeight: 300 }}>
+            30_MB_R$_49,90__MIGRACAO
           </Text>
         </View>
-        <View style={styles.boxVencimento}>
-          <Text style={[styles.textTitle]}>Descrição:</Text>
-          <Text style={{ fontSize: 14, fontWeight: 300 }}>{descricao}</Text>
-        </View>
-        {isVisible && <ButtonsTermos />}
-      </TouchableOpacity>
+
+        {isVisible && <ButtonsContratos />}
+      </View>
     </View>
   );
 };
@@ -55,12 +58,13 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     marginTop: 15,
-    marginBottom: 15,
+    marginBottom: 25,
   },
-  boxVencimento: {
+  boxDescricao: {
     flexDirection: "row",
     justifyContent: "space-between",
   },
+
   // --------------------------------------------------------
 
   //---------
@@ -87,4 +91,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ConteudoTermos2;
+export default BoxContratos;

@@ -1,11 +1,11 @@
 import { MaterialIcons } from "@expo/vector-icons";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { useState } from "react";
-import OpenBoxContratos2 from "../OpenBoxContratos2";
+import ButtonsFaturas from "../ButtonsFaturas";
 
 // import { Container } from './styles';
 
-const CarregarContratos = () => {
+const BoxFaturas = ({ status, vencimento, periodo1, periodo2 }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleToggleVisibility = () => {
@@ -25,18 +25,53 @@ const CarregarContratos = () => {
           <Text
             style={[styles.boxHandleStatus, { fontSize: 14, fontWeight: 300 }]}
           >
-            ativo
+            {status}
           </Text>
         </TouchableOpacity>
-        <View style={styles.boxDescricao}>
-          <Text style={[styles.textTitle]}>Descrição:</Text>
+        <View style={styles.boxPeriodo}>
+          <Text style={[styles.textTitle]}>Periodo:</Text>
           <Text style={{ fontSize: 14, fontWeight: 300 }}>
-            30_MB_R$_49,90__MIGRACAO
+            de {periodo1} até {periodo2}
           </Text>
         </View>
+        <View style={styles.boxVencimento}>
+          <Text style={[styles.textTitle]}>Vencimento:</Text>
+          <Text style={{ fontSize: 14, fontWeight: 300 }}>{vencimento}</Text>
+        </View>
 
-        {isVisible && <OpenBoxContratos2 />}
+        {isVisible && <ButtonsFaturas valor={"49,90"} />}
       </View>
+
+      {/* <View style={styles.titlesTable}>
+        <Text style={[styles.textTitle]}>Status</Text>
+        <Text style={[styles.textTitle]}>Vencimento</Text>
+        <Text style={[styles.textTitle]}>Valor</Text>
+
+        <Text style={[styles.textTitle, { marginLeft: 45 }]}>Ações</Text>
+      </View>
+      <View style={styles.bodyTable}>
+        <Text
+          style={[styles.boxHandleStatus, { fontSize: 12, marginRight: 20 }]}
+        >
+          {status}
+        </Text>
+
+        <Text allowFontScaling={true} style={styles.textBody}>
+          {vencimento}
+        </Text>
+        <Text style={[styles.textBody, { marginRight: 10 }]}>{valor}</Text>
+        <View>
+          <TouchableOpacity onPress={handleToggleVisibility}>
+            <View style={styles.selectAcao}>
+              <Text style={{ color: "white", fontSize: 11 }}>
+                Selecione uma ação
+              </Text>
+              <MaterialIcons name="arrow-drop-down" color={"white"} size={14} />
+            </View>
+          </TouchableOpacity>
+          {isVisible && <OpenBoxFaturas />}
+        </View>
+      </View> */}
     </View>
   );
 };
@@ -60,7 +95,12 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 25,
   },
-  boxDescricao: {
+  boxPeriodo: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 25,
+  },
+  boxVencimento: {
     flexDirection: "row",
     justifyContent: "space-between",
   },
@@ -91,4 +131,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CarregarContratos;
+export default BoxFaturas;
