@@ -102,7 +102,10 @@ export default function Faturas({ navigation }) {
         ----------------------- CARREGAR
         */}
 
-        <BoxTermos status={"assinado"} descricao={"30_MB_R$_49,90__MIGRACAO"} />
+        <BoxTermos
+          status={"assinado"}
+          descricao={"TERMO COMODATOS COM MULTA RECISÓRIA"}
+        />
       </View>
     </View>
   );
