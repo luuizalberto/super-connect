@@ -1,8 +1,7 @@
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import { useState } from "react";
 import { Feather } from "@expo/vector-icons";
-import CarregarFaturas from "../../components/CarregarFaturas";
-import OpenBoxContratos2 from "../../components/OpenBoxContratos2";
+
 import BoxContratos from "../../components/BoxContratos";
 import BoxTermos from "../../components/BoxTermos";
 

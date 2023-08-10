@@ -1,7 +1,7 @@
 import { MaterialIcons } from "@expo/vector-icons";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { useState } from "react";
-import OpenBoxFaturas2 from "../OpenBoxFaturas2";
+// import OpenBoxFaturas2 from "../OpenBoxFaturas2";
 
 // import { Container } from './styles';
 
@@ -32,7 +32,7 @@ const ConteudoFaturas2 = ({ status, vencimento, valor }) => {
           <Text style={[styles.textTitle]}>Vencimento</Text>
           <Text style={{ fontSize: 14 }}>28/08/2023</Text>
         </View>
-        {isVisible && <OpenBoxFaturas2 />}
+        {/* {isVisible && <OpenBoxFaturas2 />} */}
       </TouchableOpacity>
     </View>
   );
