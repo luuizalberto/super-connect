@@ -1,16 +1,16 @@
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-const OpenBoxContratos2 = (pagoAte) => {
+const OpenBoxContratos2 = ({ pagoAte, data }) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { marginTop: 15 }]}>
       <View style={styles.textValor}>
         <Text style={[styles.textTitle]}>Pago Até:</Text>
-        <Text style={{ fontSize: 14 }}>28/07/2023{pagoAte}</Text>
+        <Text style={styles.textSecundario}>28/07/2023{pagoAte}</Text>
       </View>
       <View style={styles.textValor}>
         <Text style={[styles.textTitle]}>Data do Contrato:</Text>
-        <Text style={{ fontSize: 14 }}>05/12/2021{pagoAte}</Text>
+        <Text style={styles.textSecundario}>05/12/2021{data}</Text>
       </View>
       {/* 
       
@@ -19,11 +19,15 @@ const OpenBoxContratos2 = (pagoAte) => {
       */}
       <View style={{ alignItems: "flex-end" }}>
         <TouchableOpacity style={styles.buttons}>
-          <MaterialIcons name="printer" color={"white"} style={styles.icon} />
+          <MaterialIcons name="print" color={"white"} style={styles.icon} />
           <Text style={styles.text}>Imprimir contrato</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttons}>
-          <MaterialIcons name="print" color={"white"} style={styles.icon} />
+          <MaterialIcons
+            name="account-balance"
+            color={"white"}
+            style={styles.icon}
+          />
           <Text style={styles.text}>Imprimir detalhamento</Text>
         </TouchableOpacity>
       </View>
@@ -42,6 +46,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 14,
   },
+  textSecundario: { fontSize: 14, fontWeight: 300 },
   // =====
 
   // ===========
