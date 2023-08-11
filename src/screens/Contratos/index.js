@@ -1,7 +1,6 @@
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import { useState } from "react";
 import { Feather } from "@expo/vector-icons";
-
 import BoxContratos from "../../components/BoxContratos";
 import BoxTermos from "../../components/BoxTermos";
 
@@ -70,7 +69,7 @@ export default function Faturas({ navigation }) {
       
       
       */}
-      <View style={styles.bodyMain}>
+      <View style={[styles.bodyMain, { marginTop: 60 }]}>
         <View style={[styles.boxMaior, { backgroundColor: "#61025e" }]}>
           <View style={styles.conteudoLeft}>
             <Text style={styles.textMaior}>Termos</Text>
