@@ -2,6 +2,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { useState } from "react";
 // import OpenBoxFaturas2 from "../OpenBoxFaturas2";
+import ButtonsFaturas from "../ButtonsFaturas";
 
 // import { Container } from './styles';
 
@@ -30,9 +31,9 @@ const ConteudoFaturas2 = ({ status, vencimento, valor }) => {
         </View>
         <View style={styles.boxVencimento}>
           <Text style={[styles.textTitle]}>Vencimento</Text>
-          <Text style={{ fontSize: 14 }}>28/08/2023</Text>
+          <Text style={{ fontSize: 14, fontWeight: 300 }}>28/08/2023</Text>
         </View>
-        {/* {isVisible && <OpenBoxFaturas2 />} */}
+        {isVisible && <ButtonsFaturas valor={"49,90"} />}
       </TouchableOpacity>
     </View>
   );
