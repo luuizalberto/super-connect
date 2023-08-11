@@ -1,4 +1,10 @@
-import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
+import {
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  Text,
+  ScrollView,
+} from "react-native";
 import { useState } from "react";
 import { Feather } from "@expo/vector-icons";
 import BoxContratos from "../../components/BoxContratos";
@@ -26,7 +32,7 @@ export default function Faturas({ navigation }) {
           alignItems: "center",
           paddingLeft: 15,
           paddingRight: 15,
-          elevation: 20,
+          elevation: 10,
         }}
       >
         {/* <Image style={{ backgroundColor: "#c7c9c8", width: 60, height: 30 }} /> */}
@@ -34,77 +40,79 @@ export default function Faturas({ navigation }) {
           <Feather name="menu" size={30} color={"black"} />
         </TouchableOpacity>
       </View>
-      <View style={styles.bodyMain}>
-        <View style={[styles.boxMaior, { backgroundColor: "#A3009E" }]}>
-          <View style={styles.conteudoLeft}>
-            <Text style={styles.textMaior}>Contratos</Text>
-            <Text
-              style={[
-                styles.textMaior,
-                { marginTop: 5, fontSize: 14, fontWeight: 300, width: "90%" },
-              ]}
-            >
-              gerencie seus contratos.
-            </Text>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.bodyMain}>
+          <View style={[styles.boxMaior, { backgroundColor: "#A3009E" }]}>
+            <View style={styles.conteudoLeft}>
+              <Text style={styles.textMaior}>Contratos</Text>
+              <Text
+                style={[
+                  styles.textMaior,
+                  { marginTop: 5, fontSize: 14, fontWeight: 300, width: "90%" },
+                ]}
+              >
+                gerencie seus contratos.
+              </Text>
+            </View>
+            <View style={styles.conteudoRight}>
+              <Text style={[styles.textMaior, { fontSize: 22 }]}>1</Text>
+              <Text
+                style={{
+                  color: "#fff",
+                  fontSize: 14,
+                  fontWeight: 300,
+                  textAlign: "right",
+                }}
+              >
+                contratos ativos listados
+              </Text>
+            </View>
           </View>
-          <View style={styles.conteudoRight}>
-            <Text style={[styles.textMaior, { fontSize: 22 }]}>1</Text>
-            <Text
-              style={{
-                color: "#fff",
-                fontSize: 14,
-                fontWeight: 300,
-                textAlign: "right",
-              }}
-            >
-              contratos ativos listados
-            </Text>
-          </View>
-        </View>
 
-        <BoxContratos />
-      </View>
-      {/* 
+          <BoxContratos />
+        </View>
+        {/* 
       
       
       
       */}
-      <View style={[styles.bodyMain, { marginTop: 60 }]}>
-        <View style={[styles.boxMaior, { backgroundColor: "#61025e" }]}>
-          <View style={styles.conteudoLeft}>
-            <Text style={styles.textMaior}>Termos</Text>
-            <Text
-              style={[
-                styles.textMaior,
-                { marginTop: 5, fontSize: 14, fontWeight: 300, width: "90%" },
-              ]}
-            >
-              gerencie seus termos.
-            </Text>
+        <View style={[styles.bodyMain, { marginTop: 60 }]}>
+          <View style={[styles.boxMaior, { backgroundColor: "#61025e" }]}>
+            <View style={styles.conteudoLeft}>
+              <Text style={styles.textMaior}>Termos</Text>
+              <Text
+                style={[
+                  styles.textMaior,
+                  { marginTop: 5, fontSize: 14, fontWeight: 300, width: "90%" },
+                ]}
+              >
+                gerencie seus termos.
+              </Text>
+            </View>
+            <View style={styles.conteudoRight}>
+              <Text style={[styles.textMaior, { fontSize: 22 }]}>1</Text>
+              <Text
+                style={{
+                  color: "#fff",
+                  fontSize: 14,
+                  fontWeight: 300,
+                  textAlign: "right",
+                }}
+              >
+                termos listados
+              </Text>
+            </View>
           </View>
-          <View style={styles.conteudoRight}>
-            <Text style={[styles.textMaior, { fontSize: 22 }]}>1</Text>
-            <Text
-              style={{
-                color: "#fff",
-                fontSize: 14,
-                fontWeight: 300,
-                textAlign: "right",
-              }}
-            >
-              termos listados
-            </Text>
-          </View>
-        </View>
-        {/* 
+          {/* 
         ----------------------- CARREGAR
         */}
 
-        <BoxTermos
-          status={"assinado"}
-          descricao={"TERMO COMODATOS COM MULTA RECISÓRIA"}
-        />
-      </View>
+          <BoxTermos
+            status={"assinado"}
+            descricao={"TERMO COMODATOS COM MULTA RECISÓRIA"}
+          />
+        </View>
+      </ScrollView>
     </View>
   );
 }
@@ -121,7 +129,7 @@ const styles = StyleSheet.create({
     padding: 15,
     left: "1%",
     minHeight: 50,
-    elevation: 20,
+    elevation: 5,
     flexDirection: "column",
   },
   boxMaior: {
