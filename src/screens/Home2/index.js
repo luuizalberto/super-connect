@@ -191,7 +191,7 @@ export default function Home2({ navigation }) {
 
             <TouchableOpacity
               style={styles.todas}
-              // onPress={() => navigation.navigate("Faturas")}
+              onPress={() => navigation.navigate("Contratos")}
             >
               <Feather
                 name="arrow-right"
