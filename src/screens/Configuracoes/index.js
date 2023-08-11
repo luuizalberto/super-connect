@@ -1,5 +1,6 @@
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { Feather, MaterialIcons } from "@expo/vector-icons";
+import Breadcrumb from "../../components/Breadcrumb";
 
 export default function Home({ navigation }) {
   const openMenu = () => {
@@ -25,9 +26,7 @@ export default function Home({ navigation }) {
           <Feather name="menu" size={30} color={"black"} />
         </TouchableOpacity>
       </View>
-      {/* 
-      
-      */}
+      <Breadcrumb navigation={navigation} atual={"Configurações"} />
 
       <View style={styles.boxContainer}>
         <View style={styles.boxInterna}>
