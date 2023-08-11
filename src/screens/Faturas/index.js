@@ -1,7 +1,14 @@
-import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
+import {
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  Text,
+  TextInput,
+} from "react-native";
 import { useState } from "react";
 import { Feather, MaterialIcons } from "@expo/vector-icons";
 import BoxFaturas from "../../components/BoxFaturas";
+import Breadcrumb from "../../components/Breadcrumb";
 
 export default function Faturas({ navigation }) {
   const openMenu = () => {
@@ -33,6 +40,22 @@ export default function Faturas({ navigation }) {
           <Feather name="menu" size={30} color={"black"} />
         </TouchableOpacity>
       </View>
+
+      <View style={styles.containerBreadPesquisa}>
+        <View style={styles.breadcrumb}>
+          <Breadcrumb navigation={navigation} atual={"Faturas"} />
+        </View>
+        <View style={styles.pesquisa}>
+          <TextInput
+            style={styles.textInput}
+            placeholder="Procure pelo contrato"
+            maxLength={40}
+            clearTextOnFocus={false}
+          />
+          <MaterialIcons name="search" size={22} color={"#a3a3a3"} />
+        </View>
+      </View>
+
       <View style={styles.bodyMain}>
         <View style={[styles.boxMaior, { backgroundColor: "#00A33F" }]}>
           <View style={styles.conteudoLeft}>
@@ -88,6 +111,30 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  // ----------------
+  containerBreadPesquisa: {
+    flexDirection: "row",
+    width: "96%",
+    alignItems: "center",
+  },
+  breadcrumb: { width: "35%" },
+  pesquisa: {
+    backgroundColor: "#fff",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingLeft: 30,
+    paddingRight: 10,
+    paddingBottom: 5,
+    paddingTop: 5,
+    borderRadius: 5,
+    width: "64%",
+    marginLeft: 3,
+    marginTop: 10,
+  },
+  textInput: { width: "85%", color: "#919191" },
+  // ---------------
+
   bodyMain: {
     backgroundColor: "#fff",
     marginTop: 25,
