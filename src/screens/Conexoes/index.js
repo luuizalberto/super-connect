@@ -1,5 +1,6 @@
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
-import { Feather, MaterialIcons } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
+import Breadcrumb from "../../components/Breadcrumb";
 
 export default function Speedtest({ navigation }) {
   const openMenu = () => {
@@ -25,6 +26,7 @@ export default function Speedtest({ navigation }) {
           <Feather name="menu" size={30} color={"black"} />
         </TouchableOpacity>
       </View>
+      <Breadcrumb navigation={navigation} atual={"Conexões"} />
       <View style={styles.boxContainer}>
         <View style={styles.bodyMain}>
           <View style={[styles.boxMaior]}>
@@ -55,7 +57,7 @@ export default function Speedtest({ navigation }) {
                 marginTop: 20,
                 textAlign: "center",
                 fontSize: 16,
-                color: "#0054b5",
+                color: "#0290bd",
                 alignItems: "center",
                 textAlign: "center",
                 marginBottom: 5,
@@ -90,7 +92,7 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
     paddingLeft: 30,
     flexDirection: "row",
-    backgroundColor: "#2D80C4",
+    backgroundColor: "#0a87ad",
     alignItems: "center",
     borderRadius: 4,
     top: -30,
@@ -101,7 +103,7 @@ const styles = StyleSheet.create({
   textGeral: {
     width: "96%",
     padding: 15,
-    backgroundColor: "#2D80C4",
+    backgroundColor: "#0a87ad",
     color: "#fff",
   },
 });
