@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
     padding: 10,
     left: "1%",
     minHeight: 50,
-    elevation: 20,
+    elevation: 5,
+    borderRadius: 5,
   },
 
   // =====

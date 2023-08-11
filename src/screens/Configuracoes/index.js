@@ -18,7 +18,7 @@ export default function Home({ navigation }) {
           alignItems: "center",
           paddingLeft: 15,
           paddingRight: 15,
-          elevation: 20,
+          elevation: 10,
         }}
       >
         {/* <Image style={{ backgroundColor: "#c7c9c8", width: 60, height: 30 }} /> */}
@@ -82,6 +82,7 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#e3e3e3",
   },
 
   boxContainer: { alignItems: "center" },
@@ -92,6 +93,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     marginTop: 10,
     borderRadius: 5,
-    elevation: 90,
+    elevation: 5,
   },
 });

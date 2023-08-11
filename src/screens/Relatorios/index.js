@@ -19,7 +19,7 @@ export default function Relatorios({ navigation }) {
           alignItems: "center",
           paddingLeft: 15,
           paddingRight: 15,
-          elevation: 20,
+          elevation: 10,
         }}
       >
         {/* <Image style={{ backgroundColor: "#c7c9c8", width: 60, height: 30 }} /> */}
@@ -84,6 +84,7 @@ export default function Relatorios({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#e3e3e3",
   },
   body: {
     justifyContent: "center",
