@@ -1,6 +1,7 @@
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import { Feather, MaterialIcons } from "@expo/vector-icons";
 import DropdownButton from "../../components/DropdownButton";
+import Breadcrumb from "../../components/Breadcrumb";
 
 export default function Relatorios({ navigation }) {
   const openMenu = () => {
@@ -27,11 +28,7 @@ export default function Relatorios({ navigation }) {
         </TouchableOpacity>
       </View>
 
-      {/* 
-      
-        
-      
-      */}
+      <Breadcrumb navigation={navigation} atual={"Relatórios"} />
 
       <View style={styles.body}>
         <View style={styles.boxContainer}>
@@ -40,16 +37,16 @@ export default function Relatorios({ navigation }) {
             <View style={{ marginLeft: 10 }}>
               <Text style={{ color: "#adadad" }}>Relatórios</Text>
               <Text>Quitação de Débitos</Text>
-              <TouchableOpacity style={styles.select}>
+              {/* <TouchableOpacity style={styles.select}>
                 <Text style={styles.textselect}>2023</Text>
                 <MaterialIcons
                   name="keyboard-arrow-down"
                   color={"gray"}
                   size={14}
                 />
-              </TouchableOpacity>
+              </TouchableOpacity> */}
 
-              {/* <DropdownButton /> */}
+              <DropdownButton />
             </View>
           </View>
           <TouchableOpacity>
