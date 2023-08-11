@@ -16,21 +16,23 @@ const Breadcrumb = ({ atual, navigation }) => {
 const styles = StyleSheet.create({
   container: {
     marginTop: 15,
-
+    marginBottom: 5,
     padding: 8,
     paddingLeft: 15,
     backgroundColor: "#fff",
     width: "100%",
     alignItems: "flex-start",
     flexDirection: "row",
+    borderTopRightRadius: 5,
+    borderBottomEndRadius: 5,
   },
   text: { fontSize: 14, color: "#05b5f5", fontWeight: 300 },
   barra: {
     fontWeight: 300,
     fontSize: 16,
-    color: "#bababa",
-    marginLeft: 15,
-    marginRight: 15,
+    color: "#d1d1d1",
+    marginLeft: 11,
+    marginRight: 13,
   },
 });
 
