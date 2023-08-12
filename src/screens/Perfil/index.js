@@ -9,6 +9,9 @@ import { useState } from "react";
 import { Feather } from "@expo/vector-icons";
 import Breadcrumb from "../../components/Breadcrumb";
 import MeusDados from "../../components/AbasPerfil/MeusDados";
+import Endereco from "../../components/AbasPerfil/Endereco";
+import Senha from "../../components/AbasPerfil/Senha";
+import Privacidade from "../../components/AbasPerfil/Privacidade";
 
 export default function Perfil({ navigation }) {
   const openMenu = () => {
@@ -27,7 +30,7 @@ export default function Perfil({ navigation }) {
   //   }
   // };
 
-  const [activeBox, setActiveBox] = useState(null);
+  const [activeBox, setActiveBox] = useState("MEUS DADOS");
 
   const handleBoxPress = (boxName) => {
     setActiveBox(boxName);
@@ -150,7 +153,7 @@ export default function Perfil({ navigation }) {
               </Text>
             </TouchableOpacity>
           </View>
-          {!isVisible && (
+          {activeBox === "MEUS DADOS" && (
             <MeusDados
               name={"debora dos santos araujo"}
               apelido={"debora dos santos araujo"}
@@ -159,6 +162,20 @@ export default function Perfil({ navigation }) {
               celular={"(79) 99845-5874"}
             />
           )}
+          {activeBox === "ENDEREÇO" && (
+            <Endereco
+              cep={"49470-000"}
+              endereco={"Pista Da Granja"}
+              num={"1198"}
+              bairro={"COLÔNIA TREZE"}
+              complemento={"FUNCIONÁRIA"}
+              referencia={""}
+              estado={"SE"}
+              cidade={"Lagarto"}
+            />
+          )}
+          {activeBox === "SENHA" && <Senha />}
+          {activeBox === "PRIVACIDADE" && <Privacidade />}
         </View>
       </ScrollView>
     </View>
