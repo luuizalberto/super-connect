@@ -19,13 +19,13 @@ export default function Perfil({ navigation }) {
     setIsVisible(!isVisible);
   };
 
-  const [activeButton, setActiveButton] = useState("MEUS DADOS");
+  // const [activeButton, setActiveButton] = useState("MEUS DADOS");
 
-  const handleButtonPress = (buttonText) => {
-    if (activeButton !== buttonText) {
-      setActiveButton(buttonText);
-    }
-  };
+  // const handleButtonPress = (buttonText) => {
+  //   if (activeButton !== buttonText) {
+  //     setActiveButton(buttonText);
+  //   }
+  // };
 
   const [activeBox, setActiveBox] = useState(null);
 
@@ -87,6 +87,7 @@ export default function Perfil({ navigation }) {
                 styles.boxButton,
                 activeBox === "MEUS DADOS" && styles.activeBox,
               ]}
+              activeOpacity={1}
             >
               <Text
                 style={[
@@ -103,6 +104,7 @@ export default function Perfil({ navigation }) {
                 styles.boxButton,
                 activeBox === "ENDEREÇO" && styles.activeBox,
               ]}
+              activeOpacity={1}
             >
               <Text
                 style={[
@@ -119,6 +121,7 @@ export default function Perfil({ navigation }) {
                 styles.boxButton,
                 activeBox === "SENHA" && styles.activeBox,
               ]}
+              activeOpacity={1}
             >
               <Text
                 style={[
@@ -135,6 +138,7 @@ export default function Perfil({ navigation }) {
                 styles.boxButton,
                 activeBox === "PRIVACIDADE" && styles.activeBox,
               ]}
+              activeOpacity={1}
             >
               <Text
                 style={[
@@ -208,7 +212,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#7451cf",
   },
   activeBox: {
-    opacity: 0.8,
+    opacity: 0.7,
   },
   textBottons: {
     fontSize: 12,
