@@ -85,7 +85,7 @@ export default function Home2({ navigation }) {
           <View style={styles.bodyMain}>
             <BoxTitle
               icon={"monetization-on"}
-              title={"Home 2"}
+              title={"Faturas"}
               color={"#00A33F"}
             />
 
