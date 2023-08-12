@@ -38,6 +38,7 @@ const MeusDados = ({
           defaultValue={name}
           maxLength={50}
           readOnly={isEditar} // desabilita edição
+          placeholderTextColor={"#e0e0e0"}
         />
       </View>
       <View style={styles.singleBoxInput}>
@@ -49,6 +50,7 @@ const MeusDados = ({
           defaultValue={apelido}
           maxLength={50}
           readOnly={isEditar}
+          placeholderTextColor={"#e0e0e0"}
         />
       </View>
       <View style={styles.singleBoxInput}>
@@ -61,6 +63,7 @@ const MeusDados = ({
           maxLength={10}
           readOnly={isEditar}
           keyboardType="numeric"
+          placeholderTextColor={"#e0e0e0"}
         />
       </View>
       <View style={styles.singleBoxInput}>
@@ -73,6 +76,7 @@ const MeusDados = ({
           maxLength={14}
           readOnly={isEditar}
           keyboardType="numeric"
+          placeholderTextColor={"#e0e0e0"}
         />
       </View>
       <View style={styles.singleBoxInput}>
@@ -85,6 +89,7 @@ const MeusDados = ({
           maxLength={15}
           readOnly={isEditar}
           keyboardType="numeric"
+          placeholderTextColor={"#e0e0e0"}
         />
       </View>
       <View style={[styles.singleBoxInput, { marginTop: 15 }]}>
