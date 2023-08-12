@@ -15,7 +15,7 @@ const HeaderDrawer = () => {
       </View>
       <View style={styles.boxText}>
         <Text style={styles.nameUser}>Denize</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Perfil")}>
           <Text style={styles.verDados}>ver dados</Text>
         </TouchableOpacity>
       </View>
