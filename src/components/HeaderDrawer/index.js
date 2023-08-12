@@ -10,9 +10,12 @@ const HeaderDrawer = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.header}>
-      <View style={styles.boxUser}>
+      <TouchableOpacity
+        style={styles.boxUser}
+        onPress={() => navigation.navigate("Perfil")}
+      >
         <Text style={{ fontSize: 30, color: "#fff" }}>D</Text>
-      </View>
+      </TouchableOpacity>
       <View style={styles.boxText}>
         <Text style={styles.nameUser}>Denize</Text>
         <TouchableOpacity onPress={() => navigation.navigate("Perfil")}>
