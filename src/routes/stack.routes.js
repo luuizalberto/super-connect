@@ -18,15 +18,7 @@ const Stack = createNativeStackNavigator();
 
 export default function StackRoutes() {
   return (
-    <Stack.Navigator
-      initialRouteName="Home"
-      screenOptions={{
-        cardStyle: {
-          flex: 1,
-          width: "50%", // Define a altura máxima da tela como 50% do dispositivo
-        },
-      }}
-    >
+    <Stack.Navigator initialRouteName="Home">
       {/* <Stack.Screen name="inicio" component={DrawerRoutes} /> */}
       <Stack.Screen
         name="Login"
