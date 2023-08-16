@@ -121,12 +121,20 @@ export default function DrawerRoutes() {
       <Drawer.Screen
         name="Login"
         component={Login}
-        options={{ swipeEnabled: false, drawerLabel: `  aqui` }}
+        options={{
+          // swipeEnabled: false,
+          drawerLabel: () => null,
+          drawerItemStyle: { display: "none" },
+        }}
       />
       <Drawer.Screen
         name="Perfil"
         component={Perfil}
-        options={{ swipeEnabled: false, drawerLabel: `  aqui` }}
+        options={{
+          // swipeEnabled: false,
+          drawerLabel: () => null,
+          drawerItemStyle: { display: "none" },
+        }}
       />
     </Drawer.Navigator>
   );
