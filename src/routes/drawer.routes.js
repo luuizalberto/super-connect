@@ -11,6 +11,7 @@ import Configuracoes from "../screens/Configuracoes";
 import Speedtest from "../screens/Speedtest";
 import Conexoes from "../screens/Conexoes";
 import Contratos from "../screens/Contratos";
+import Perfil from "../screens/Perfil";
 import { SafeAreaView, StyleSheet } from "react-native";
 import HeaderDrawer from "../components/HeaderDrawer";
 
@@ -120,6 +121,11 @@ export default function DrawerRoutes() {
       <Drawer.Screen
         name="Login"
         component={Login}
+        options={{ swipeEnabled: false, drawerLabel: `  aqui` }}
+      />
+      <Drawer.Screen
+        name="Perfil"
+        component={Perfil}
         options={{ swipeEnabled: false, drawerLabel: `  aqui` }}
       />
     </Drawer.Navigator>
