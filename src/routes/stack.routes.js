@@ -1,3 +1,6 @@
+import React from "react";
+import { View, StyleSheet, Dimensions } from "react-native";
+
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Login from "../screens/Login";
@@ -9,13 +12,21 @@ import Speedtest from "../screens/Speedtest";
 import Conexoes from "../screens/Conexoes";
 import Contratos from "../screens/Contratos";
 import Perfil from "../screens/Perfil";
-import Menu from "../screens/Menu";
+import MenuScreen from "../screens/MenuScreen";
 
 const Stack = createNativeStackNavigator();
 
 export default function StackRoutes() {
   return (
-    <Stack.Navigator initialRouteName="Login">
+    <Stack.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        cardStyle: {
+          flex: 1,
+          width: "50%", // Define a altura máxima da tela como 50% do dispositivo
+        },
+      }}
+    >
       {/* <Stack.Screen name="inicio" component={DrawerRoutes} /> */}
       <Stack.Screen
         name="Login"
@@ -63,9 +74,16 @@ export default function StackRoutes() {
         options={{ headerShown: false }} // Ocultar cabeçalho na tela de Home
       />
       <Stack.Screen
-        name="Menu"
-        component={Menu}
-        options={{ headerShown: false }} // Ocultar cabeçalho na tela de Home
+        name="MenuScreen"
+        component={MenuScreen}
+        options={{
+          headerShown: false,
+          animation: "slide_from_right",
+          title: "test",
+          headerStyle: {
+            backgroundColor: "#f8fcfb",
+          },
+        }}
       />
     </Stack.Navigator>
   );
