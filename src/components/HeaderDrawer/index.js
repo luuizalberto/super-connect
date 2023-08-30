@@ -24,7 +24,7 @@ const HeaderDrawer = () => {
       </View>
       <View style={styles.boxIcon}>
         <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-          <MaterialIcons name="exit-to-app" color={"#bfbfbf"} size={30} />
+          <MaterialIcons name="exit-to-app" color={"#bfbfbf"} size={24} />
         </TouchableOpacity>
       </View>
     </View>
